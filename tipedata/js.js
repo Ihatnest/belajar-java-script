@@ -1,3 +1,4 @@
+
 // Angka tanpa desimal
 // keakurasian nya hanya 15 angka kalau 16 maka akan di bulatkan
 alert(9999999999999999);
