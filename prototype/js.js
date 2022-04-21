@@ -45,3 +45,19 @@ class user {
 let ihat = new user('ihat',100);
 let uhat = new user('uhat',150);
 // jadi ini prototype mengunakan class
+
+
+// misal
+
+// let angka = [];
+// ini yang terjadi sebenar nya di dalam let angka = [] 
+// let angka = new Array()
+// function array(){
+//   let this = Object.create(array.prototype)
+// };
+
+// misal 
+let angka = [1,2,3];
+console.log(angka.reverse())
+
+// jadi reverse() itu function yak
