@@ -9,6 +9,13 @@ box.addEventListener('click',function(){
     this.classList.toggle('size')// kalo disini this=box
     setTimeout(()=>{
         console.log(this) // kalo disini this=box kalo pake arrow fuuction kalo pake function biasa this=window coba ja ganti jadi function biasa kalo ngga percaya
-        this.classList.toggle('warna')// jadi disini fungsi arrow function terjadi jadi di ini ibarat nya this nya itu jadi box dan apa bila  mengunakan fuction biasa maka this nya itu window sebenar nya ngga pake this pun bisa cuman pake box tapi karna disini tujuan agar bisa kita megerti jadi ngga usah pake box lah jadi pake this saja
+        this.classList.toggle('warna')// jadi disini fungsi arrow  function terjadi jadi di ini ibarat nya this nya itu jadi box dan apa bila  mengunakan fuction biasa maka this nya itu window sebenar nya ngga pake this pun bisa cuman pake box tapi karna disini tujuan agar bisa kita megerti jadi ngga usah pake box lah jadi pake this saja
     },600)
 })
+
+function tambah() {
+    for(let i = 0; i < 5;i++){
+        i+2
+    }
+}
+console.log(tambah())
