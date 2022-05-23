@@ -1,8 +1,8 @@
-// document pemangil
+// document pemanggil
 const li = Array.from(document.querySelectorAll('[data-duration]'));
 const totalDurasi = document.getElementsByClassName('total-durasi')[0];
 const jumlahVideo = document.getElementsByClassName('jumlah-video')[0];
-// document pemangil (penutup)
+// document pemanggil (penutup)
 
 // pembuat waktu jam menit dan detik
 let durasi = text=>{return li.filter(li => li.innerText.includes(''+ text +''))
