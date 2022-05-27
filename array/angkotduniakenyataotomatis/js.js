@@ -6,4 +6,4 @@ if (algo === 0.1){
         
     }
 }
-// akan ku saat sudah keterima kuliah lajut jadi buat angkot yang sedang kerja dana nagambil penumpang secara otomatis jadi kaya angkot di dunia nyata oke entar gua lanjutin oke oke 
+// akan ku saaat sudah keterima kuliah lajut jadi buat angkot yang sedang kerja dana nagambil penumpang secara otomatis jadi kaya angkot di dunia nyata oke entar gua lanjutin oke oke 
