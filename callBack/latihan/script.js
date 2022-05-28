@@ -1,10 +1,40 @@
-$.ajax({
-    url: 'http://www.omdbapi.com/?apikey=c35b2aac&s=avengers',
-    success: result => {
-        const movies = result.Search;
-        let card = '';
-        movies.forEach(m => {
-            card += `<div class="col-md-4 my-5">
+$('.tombol-cari').on('click',function(){
+    $.ajax({
+        url: 'http://www.omdbapi.com/?apikey=c35b2aac&s=' + $('.cari').val(),
+        success: result => {
+            const movies = result.Search;
+            let card = '';
+            movies.forEach(m => {
+                card += mov(m);
+            });
+            $('.container-movie').html(card)
+    
+            $('.tombol-info').on('click', function () {
+    
+                $.ajax({
+                    url: 'http://www.omdbapi.com/?apikey=c35b2aac&i=' + $(this).data('id'),
+                    success: m => {
+                        let dataInfo = info(m);
+                        $('.data-info').html(dataInfo)
+    
+                    },
+                    error: e => {
+                        console.log(e.responseText);
+                    }
+                })
+    
+    
+            })
+        },
+        error: (e) => {
+            console.log(e.responseText);
+        }
+    });
+});
+
+
+function mov(m) {
+    return `<div class="col-md-4 my-5">
             <div class="card">
             <img src="${m.Poster}" class="card-img-top">
             <div class="card-body">
@@ -14,38 +44,20 @@ $.ajax({
             </div>
             </div>
             </div>`
-        });
-        $('.container-movie').html(card)
+}
 
-        $('.tombol-info').on('click',function () {
+function info(m) {
+    return `<div class="col-md-3">
+        <img src="${m.Poster}" class="img-fluid">
+    </div>
+    <div class="col-md">
+        <ul class="list-group">
+            <li class="list-group-item"><strong>Title: ${m.Title}</strong></li>
+            <li class="list-group-item"><em>Genre: </em>${m.Genre}</li>
+            <li class="list-group-item"><em>Runtime: </em>${m.Runtime}</li>
+            <li class="list-group-item"><em>Country: </em>${m.Country}</li>
+            <li class="list-group-item"><em>Plot: </em>${m.Plot}</li>
+        </ul>
+    </div>`
+}
 
-            $.ajax({
-                url: 'http://www.omdbapi.com/?apikey=c35b2aac&i=' + $(this).data('id'),
-                success: m => {
-                    let dataInfo = `<div class="col-md-3">
-                                        <img src="${m.Poster}" class="img-fluid">
-                                    </div>
-                                    <div class="col-md">
-                                        <ul class="list-group">
-                                        <li class="list-group-item"><strong>Title: ${m.Title}</strong></li>
-                                        <li class="list-group-item"><em>Genre: </em>${m.Genre}</li>
-                                        <li class="list-group-item"><em>Runtime: </em>${m.Runtime}</li>
-                                        <li class="list-group-item"><em>Country: </em>${m.Country}</li>
-                                        <li class="list-group-item"><em>Plot: </em>${m.Plot}</li>
-                                        </ul>
-                                    </div>`;
-                    $('.data-info').html(dataInfo)
-
-                },
-                error: e => {
-                    console.log(e.responseText);
-                }
-            })
-
-
-        })
-    },
-    error: (e) => {
-        console.log(e.responseText);
-    }
-});

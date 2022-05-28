@@ -10,21 +10,30 @@
 </head>
 
 <body>
-  <!-- list -->
+  <div class="input-group mb-3 mt-5">
+    <button class="btn btn-outline-secondary bg-primary text-light tombol-cari" type="button"
+      id="button-addon1">Search</button>
+    <input type="text" class="form-control cari" placeholder="" aria-label="Example text with button addon"
+      aria-describedby="button-addon1">
+  </div>
+
+
+  <!-- film -->
   <div class="container">
     <div class="row mt-5">
       <div class="col">
         <h1>MOVIE</h1>
       </div>
-
+      <!-- thumb movie -->
       <div class="row container-movie">
         
       </div>
-      
-      <!-- Modal -->
     </div>
   </div>
-  
+  <!-- thumb movie prnutup-->
+  <!-- film -->
+
+  <!-- Modal -->
   <div class="modal fade" id="tombolinfo" tabindex="-1" aria-labelledby="tombolinfoLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">
@@ -35,21 +44,16 @@
         <div class="modal-body">
           <div class="row data-info">
 
-            
-
           </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
   </div>
-  <!-- awal modal -->
-  <!-- Button trigger modal -->
-  <!-- akhir moal -->
-  <!-- list -->
+  <!-- akhir modal -->
+
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
