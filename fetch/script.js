@@ -15,8 +15,9 @@ buttonSearch.addEventListener('click',function() {
         tombolInfo.addEventListener('click',function(){
             let dataInfo = document.getElementsByClassName('data-info')[0];
             fetch('http://www.omdbapi.com/?apikey=c35b2aac&i=' + (this.getAttribute('data-id')))
+            .then(respon => respon.json())
             .then(m => {
-                console.log(this)
+                console.log(dataInfo)
                 let dataInfo1 = info(m);
                 dataInfo.innerHTML = dataInfo1;
             })
@@ -37,39 +38,6 @@ buttonSearch.addEventListener('click',function() {
 
 
 
-// $('.tombol-cari').on('click',function(){
-//     $.ajax({
-//         url: 'http://www.omdbapi.com/?apikey=c35b2aac&s=' + $('.cari').val(),
-//         success: result => {
-//             const movies = result.Search;
-//             let card = '';
-//             movies.forEach(m => {
-//                 card += mov(m);
-//             });
-//             $('.container-movie').html(card)
-    
-//             $('.tombol-info').on('click', function () {
-    
-//                 $.ajax({
-//                     url: 'http://www.omdbapi.com/?apikey=c35b2aac&i=' + $(this).data('id'),
-//                     success: m => {
-//                         let dataInfo = info(m);
-//                         $('.data-info').html(dataInfo)
-    
-//                     },
-//                     error: e => {
-//                         console.log(e.responseText);
-//                     }
-//                 })
-    
-    
-//             })
-//         },
-//         error: (e) => {
-//             console.log(e.responseText);
-//         }
-//     });
-// });
 
 
 function mov(m) {
