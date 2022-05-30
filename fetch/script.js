@@ -24,22 +24,6 @@ buttonSearch.addEventListener('click',function() {
         })
     })
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function mov(m) {
     return `<div class="col-md-4 my-5">
             <div class="card">
@@ -52,7 +36,6 @@ function mov(m) {
             </div>
             </div>`
 }
-
 function info(m) {
     return `<div class="col-md-3">
         <img src="${m.Poster}" class="img-fluid">
