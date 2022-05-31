@@ -14,6 +14,8 @@ $('.tombol-cari').on('click',function(){
                 $.ajax({
                     url: 'http://www.omdbapi.com/?apikey=c35b2aac&i=' + $(this).data('id'),
                     success: m => {
+                        console.log(m)
+                        console.log(this)
                         let dataInfo = info(m);
                         $('.data-info').html(dataInfo)
     

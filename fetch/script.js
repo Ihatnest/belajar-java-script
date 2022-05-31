@@ -1,29 +1,30 @@
 let buttonSearch = document.getElementsByClassName('tombol-cari')[0];
-buttonSearch.addEventListener('click',function() {
+buttonSearch.addEventListener('click', function () {
     let containerMovie = document.getElementsByClassName('container-movie')[0];
     let Search = document.getElementsByClassName('cari')[0];
     fetch('http://www.omdbapi.com/?apikey=c35b2aac&s=' + (Search.value))
-    .then(respon => respon.json())
-    .then(respon => {
-        let data = respon.Search;
-        let card = '';
-        data.forEach(m => {card += mov(m)})
-        containerMovie.innerHTML = card;
-        console.log(data)
-
-        let tombolInfo = document.getElementsByClassName('tombol-info')[0];
-        tombolInfo.addEventListener('click',function(){
-            let dataInfo = document.getElementsByClassName('data-info')[0];
-            fetch('http://www.omdbapi.com/?apikey=c35b2aac&i=' + (this.getAttribute('data-id')))
-            .then(respon => respon.json())
-            .then(m => {
-                console.log(dataInfo)
-                let dataInfo1 = info(m);
-                dataInfo.innerHTML = dataInfo1;
+        .then(respon => respon.json())
+        .then(respon => {
+            let data = respon.Search;
+            let card = '';
+            data.forEach(m => { card += mov(m) })
+            containerMovie.innerHTML = card;
+            
+            let tombolInfo = document.querySelectorAll('.tombol-info');
+            tombolInfo.forEach(m => {
+                m.addEventListener('click', function () {
+                    fetch('http://www.omdbapi.com/?apikey=c35b2aac&i=' + (this.getAttribute('data-id')))
+                    .then(respon => respon.json())
+                    .then(m => {
+                            let dataInfo = document.getElementsByClassName('data-info')[0];
+                            let dataInfo1 = info(m);
+                            dataInfo.innerHTML = dataInfo1;
+                        })
+                })
             })
         })
-    })
 })
+
 function mov(m) {
     return `<div class="col-md-4 my-5">
             <div class="card">
