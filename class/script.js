@@ -8,5 +8,6 @@ class nama {
   }
 }
 
+
 const sapi = new nama('sapi',20)
 sapi.umur("naga")
