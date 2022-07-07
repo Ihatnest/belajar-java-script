@@ -1,4 +1,5 @@
 class nama {
+    // jadi sayBye ini dia di proto
     sayBye(nama) {
         console.info(`bye nama ${nama} ${this.nama}`)
     }
